@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ activeTab: 'teaching' }">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics Centre | Empowering Minds Through Data</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <header class="bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 flex justify-between items-center">
+      <h1 class="text-3xl font-bold text-indigo-600">Analytics Centre</h1>
+      <nav class="flex space-x-8">
+        <a @click="activeTab = 'teaching'" 
+           :class="activeTab === 'teaching' ? 'text-indigo-600' : 'text-gray-500 hover:text-indigo-600'" 
+           href="#teaching" class="font-medium">
+          Teaching
+        </a>
+        <a @click="activeTab = 'masterclass'" 
+           :class="activeTab === 'masterclass' ? 'text-indigo-600' : 'text-gray-500 hover:text-indigo-600'" 
+           href="#masterclass" class="font-medium">
+          Masterclass
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+    <!-- Hero Section -->
+    <section class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Empowering Minds Through Data</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Transform how you understand and use data — from undergrad to pro level.</p>
+    </section>
+
+    <!-- Tab Navigation -->
+    <div class="border-b border-gray-200 mb-8">
+      <nav class="-mb-px flex space-x-8">
+        <button @click="activeTab = 'teaching'" 
+                :class="activeTab === 'teaching' ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'" 
+                class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
+          Teaching Analytics
+        </button>
+        <button @click="activeTab = 'masterclass'" 
+                :class="activeTab === 'masterclass' ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'" 
+                class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
+          Masterclass
+        </button>
+      </nav>
+    </div>
+
+    <!-- Teaching Tab Content -->
+    <div x-show="activeTab === 'teaching'" id="teaching" class="space-y-8">
+      <section class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Teaching Analytics</h3>
+        <p class="text-gray-600 mb-6">Designed for undergraduate and graduate students to grasp the transformative power of data.</p>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="text-indigo-600 mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <h4 class="text-lg font-medium text-gray-900 mb-2">Data Visualization & Storytelling</h4>
+            <p class="text-gray-600">Learn to present data effectively and tell compelling stories with numbers.</p>
+          </div>
+          
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="text-indigo-600 mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            </div>
+            <h4 class="text-lg font-medium text-gray-900 mb-2">Data Ethics & Privacy</h4>
+            <p class="text-gray-600">Understand the ethical implications and privacy concerns in data analysis.</p>
+          </div>
+          
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="text-indigo-600 mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <h4 class="text-lg font-medium text-gray-900 mb-2">Hands-on with Python, Excel & R</h4>
+            <p class="text-gray-600">Gain practical skills with industry-standard tools for data analysis.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Masterclass Tab Content -->
+    <div x-show="activeTab === 'masterclass'" id="masterclass" class="space-y-8">
+      <section class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Masterclass for Early Career Professionals</h3>
+        <p class="text-gray-600 mb-6">Upskill with real-world analytics. Build confidence and competence in:</p>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="text-indigo-600 mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <h4 class="text-lg font-medium text-gray-900 mb-2">Business Intelligence Tools</h4>
+            <p class="text-gray-600">Master tools like Tableau, Power BI, and Looker for effective data analysis.</p>
+          </div>
+          
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="text-indigo-600 mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+              </svg>
+            </div>
+            <h4 class="text-lg font-medium text-gray-900 mb-2">Dashboards & Reporting</h4>
+            <p class="text-gray-600">Create interactive dashboards and professional reports that drive decisions.</p>
+          </div>
+          
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="text-indigo-600 mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+            </div>
+            <h4 class="text-lg font-medium text-gray-900 mb-2">Machine Learning Foundations</h4>
+            <p class="text-gray-600">Learn the fundamentals of ML and how to apply them in business contexts.</p>
+          </div>
+        </div>
+        
+        <div class="mt-8 text-center">
+          <a href="register.html" 
+                  class="bg-indigo-600 text-white py-3 px-8 rounded-md hover:bg-indigo-700 transition duration-150 font-medium">
+            Register Now
+          </a>
+        </div>
+      </section>
+    </div>
+
+<!-- Testimonials Section -->
+    <section class="my-16">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">What Our Students Say</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+          <div class="flex items-center mb-4">
+            <div class="h-12 w-12 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold mr-4">JD</div>
+            <div>
+              <h4 class="font-medium text-gray-900">John Doe</h4>
+              <p class="text-sm text-gray-500">Data Analyst</p>
+            </div>
+          </div>
+          <p class="text-gray-600">"The Masterclass transformed how I approach data in my work. The practical exercises were exactly what I needed to boost my confidence."</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+          <div class="flex items-center mb-4">
+            <div class="h-12 w-12 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold mr-4">AS</div>
+            <div>
+              <h4 class="font-medium text-gray-900">Alice Smith</h4>
+              <p class="text-sm text-gray-500">Graduate Student</p>
+            </div>
+          </div>
+          <p class="text-gray-600">"The teaching analytics course made complex concepts accessible. The instructor's real-world examples were invaluable."</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+          <div class="flex items-center mb-4">
+            <div class="h-12 w-12 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold mr-4">RJ</div>
+            <div>
+              <h4 class="font-medium text-gray-900">Robert Johnson</h4>
+              <p class="text-sm text-gray-500">Business Intelligence</p>
+            </div>
+          </div>
+          <p class="text-gray-600">"I've attended many courses, but the hands-on approach here is unmatched. The dashboard training alone was worth the investment."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us CTA -->
+    <section class="bg-indigo-50 rounded-lg p-8 my-16 text-center">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">Learn More About Our Team</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto mb-6">Our experienced instructors bring years of industry knowledge and a passion for teaching to every session.</p>
+      <a href="about.html" class="inline-block bg-indigo-600 text-white py-2 px-6 rounded-md hover:bg-indigo-700 transition duration-150 font-medium">
+        Meet Our Trainer
+      </a>
+    </section>
+  </main>
+  <footer class="bg-white border-t border-gray-200 mt-12">
+    <div class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 text-center">
+      <p class="text-gray-500">&copy; 2025 Analytics Centre. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
